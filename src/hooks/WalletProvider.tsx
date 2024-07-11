@@ -21,7 +21,15 @@ declare global {
   }
 }
 
-export const WalletProviderContext = createContext<WalletProviderContext>(null);
+export const WalletProviderContext = createContext<WalletProviderContext>({
+  wallets: {},
+  selectedWallet: null,
+  selectedAccount: null,
+  errorMessage: null,
+  connectWallet: async () => {}, // Placeholder async function
+  disconnectWallet: () => {}, // Placeholder function
+  clearError: () => {}, // Placeholder function
+});
 
 export const WalletProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [wallets, setWallets] = useState<Record<string, EIP6963ProviderDetail>>({});
