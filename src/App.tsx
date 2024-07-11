@@ -6,12 +6,14 @@ import { WalletError } from "./components/WalletError"
 
 function App() {
   return (
+    <>
     <WalletProvider>
       <WalletList />
       <hr />
       <SelectedWallet />
       <WalletError />
     </WalletProvider>
+    </>
  )
 }
 
