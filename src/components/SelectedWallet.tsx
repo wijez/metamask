@@ -1,14 +1,16 @@
-import { useWalletProvider } from "../hooks/useWalletProvider"
-import { formatAddress } from "../utils"
-import styles from "./SelectedWallet.module.css"
+import { useWalletProvider } from "../hooks/useWalletProvider";
+import { formatAddress } from "../utils";
+import styles from "./SelectedWallet.module.css";
 
 export const SelectedWallet = () => {
-  const { selectedWallet, selectedAccount, disconnectWallet } = useWalletProvider()
+  const { selectedWallet, selectedAccount, disconnectWallet } = useWalletProvider();
 
   return (
     <>
-      <h2 className={styles.userAccount}>{selectedAccount ? "" : "No "}Wallet Selected</h2>
-      {selectedAccount && selectedWallet && ( 
+      <h2 className={styles.userAccount}>
+        {selectedAccount ? "" : "No "}Wallet Selected
+      </h2>
+      {selectedAccount && selectedWallet && (  // Kiểm tra selectedWallet có giá trị
         <>
           <div className={styles.selectedWallet}>
             <img src={selectedWallet.info.icon} alt={selectedWallet.info.name} />
@@ -21,5 +23,5 @@ export const SelectedWallet = () => {
         </>
       )}
     </>
- )
-}
+  );
+};
