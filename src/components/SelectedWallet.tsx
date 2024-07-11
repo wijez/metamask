@@ -8,7 +8,7 @@ export const SelectedWallet = () => {
   return (
     <>
       <h2 className={styles.userAccount}>{selectedAccount ? "" : "No "}Wallet Selected</h2>
-      {selectedAccount &&
+      {selectedAccount && selectedWallet && ( 
         <>
           <div className={styles.selectedWallet}>
             <img src={selectedWallet.info.icon} alt={selectedWallet.info.name} />
@@ -19,7 +19,7 @@ export const SelectedWallet = () => {
           </div>
           <button onClick={disconnectWallet}>Disconnect Wallet</button>
         </>
-      }
+      )}
     </>
  )
 }
